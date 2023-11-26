@@ -18,5 +18,56 @@ heading {
   align-items: center;
   justify-content: center;
 
-  height: 30vh;
+  height: 40vh;
+}
+
+.buttons {
+  display: flex;
+  // center horizontally and everything vertically
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+
+  button {
+    width: 70%;
+    height: 4rem;
+    font-family: "cascadia-regular";
+    font-size: 1rem;
+
+    border: 2px solid transparent;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateY(-5px);
+      border: 2px solid #333;
+    }
+  }
+
+  button:nth-child(1) {
+    background: #e1f5e7;
+    color: #475c4c;
+  }
+
+  button:nth-child(2) {
+    background: #dceafc;
+    color: #4a596c;
+  }
+
+  button:nth-child(3) {
+    background: #ffeeff;
+    color: #b085b5;
+  }
+
+  button:nth-child(4) {
+    background: #ffedd9;
+    color: #bd8463;
+  }
+
+  button:nth-child(5) {
+    background: #f2f4c3;
+    color: #798b5f;
+  }
 }
