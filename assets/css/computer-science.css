@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "cascadia-regular";
+  src: url("../fonts/cascadia.woff2") format("woff2"), url("../fonts/cascadia.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+heading {
+  font-size: 2.5rem;
+  font-family: "cascadia-regular";
+  letter-spacing: -2px;
+  color: #333;
+  opacity: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+}
+heading a {
+  text-decoration: none;
+  color: #333;
+}
+
+.topic {
+  display: flex;
+  align-items: center;
+  max-width: 80%;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-family: "cascadia-regular";
+  color: #350064;
+  text-align: center;
+}/*# sourceMappingURL=computer-science.css.map */
