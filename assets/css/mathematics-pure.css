@@ -23,13 +23,39 @@ heading {
   color: #333;
   opacity: 80%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 40vh;
+  gap: 1rem;
+  height: 60vh;
 }
 heading a {
   text-decoration: none;
   color: #333;
+}
+heading .yearButtons {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+heading .yearButtons button {
+  width: 150%;
+  height: 4rem;
+  font-family: "cascadia-regular";
+  font-size: 1rem;
+}
+heading .yearButtons button:nth-child(1) {
+  background: #e9e5f3;
+  outline: none;
+  border: 2px solid transparent;
+}
+heading .yearButtons button:nth-child(2) {
+  background: #feeef5;
+  outline: none;
+  border: 2px solid transparent;
 }
 
 .topic {
@@ -41,4 +67,8 @@ heading a {
   font-family: "cascadia-regular";
   color: #350064;
   text-align: center;
+}
+
+.year-1 {
+  transition: all 0.5s ease-in-out;
 }/*# sourceMappingURL=mathematics-pure.css.map */

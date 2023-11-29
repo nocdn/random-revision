@@ -22,13 +22,44 @@ heading {
 
   display: flex;
   // center everything
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 
-  height: 40vh;
+  height: 60vh;
   a {
     text-decoration: none;
     color: #333;
+  }
+
+  .yearButtons {
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    button {
+      width: 150%;
+      height: 4rem;
+      font-family: "cascadia-regular";
+      font-size: 1rem;
+    }
+
+    button:nth-child(1) {
+      background: #e9e5f3;
+      outline: none;
+      border: 2px solid transparent;
+    }
+
+    button:nth-child(2) {
+      background: #feeef5;
+      outline: none;
+      border: 2px solid transparent;
+    }
   }
 }
 
@@ -43,4 +74,9 @@ heading {
   color: #350064;
   // center the text
   text-align: center;
+}
+
+.year-1 {
+  // transition of 0.5s for all animations
+  transition: all 0.5s ease-in-out;
 }
