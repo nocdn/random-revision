@@ -11,14 +11,13 @@
   font-family: "cascadia-regular";
 }
 
-button {
-  width: 8rem;
-  color: white;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  background-color: blue;
-  height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
-  background: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet);
-  background-size: cover;
+body {
+  height: 100vh;
+  height: -webkit-fill-available;
+  display: grid;
+  grid-template-rows: 1fr 1fr 2fr;
+}
+
+html {
+  height: -webkit-fill-available;
 }/*# sourceMappingURL=placeholder.css.map */
