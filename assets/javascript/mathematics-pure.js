@@ -168,6 +168,20 @@ const year2curriculum = [
   "12.4: Application to mechanics",
 ];
 
+const applyEffects = function () {
+  const topic = document.querySelector(".topic");
+  topic.style.filter = "blur(20px)";
+  topic.style.transform = "scale(0.1)";
+  topic.style.opacity = "0.3";
+};
+
+const removeEffects = function () {
+  const topic = document.querySelector(".topic");
+  topic.style.filter = "blur(0)";
+  topic.style.transform = "scale(1)";
+  topic.style.opacity = "1";
+};
+
 const randomTopicYear2 = function () {
   const chosenTopic =
     year2curriculum[Math.floor(Math.random() * year2curriculum.length)];
@@ -182,7 +196,30 @@ const randomTopicYear1 = function () {
   topic.innerText = chosenTopic;
 };
 
-const year2button = document.querySelector(".year-2");
-year2button.addEventListener("click", randomTopicYear2);
-const year1button = document.querySelector(".year-1");
-year1button.addEventListener("click", randomTopicYear1);
+const assignRandomTopicMaths = function (curriculumArray) {
+  const chosenTopic =
+    curriculumArray[Math.floor(Math.random() * curriculumArray.length)];
+  const topic = document.querySelector(".topic");
+
+  applyEffects();
+  topic.innerText = chosenTopic;
+  setTimeout(removeEffects, 10);
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  const year1button = document.querySelector(".year-1");
+  year1button.addEventListener("click", function () {
+    console.log("clicked year 1");
+    applyEffects();
+    setTimeout(randomTopicYear1, 260);
+    setTimeout(removeEffects, 350);
+  });
+
+  const year2button = document.querySelector(".year-2");
+  year2button.addEventListener("click", function () {
+    console.log("clicked year 2");
+    applyEffects();
+    setTimeout(randomTopicYear2, 260);
+    setTimeout(removeEffects, 350);
+  });
+});

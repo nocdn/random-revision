@@ -67,6 +67,7 @@ heading .yearButtons button:nth-child(2) {
   font-family: "cascadia-regular";
   color: #350064;
   text-align: center;
+  transition: filter 0.5s, transform 0.5s;
 }
 
 .year-1 {

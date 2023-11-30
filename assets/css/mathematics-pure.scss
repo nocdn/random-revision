@@ -74,6 +74,9 @@ heading {
   color: #350064;
   // center the text
   text-align: center;
+
+  // for morphing animation
+  transition: filter 0.5s, transform 0.5s;
 }
 
 .year-1 {
