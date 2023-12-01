@@ -28,7 +28,8 @@ heading {
   flex-direction: column;
   gap: 1rem;
 }
-.buttons a {
+.buttons a,
+.buttons button {
   text-decoration: none;
   width: 70%;
   height: 4rem;
@@ -41,10 +42,6 @@ heading {
   outline: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-}
-.buttons a:hover {
-  transform: translateY(-5px);
-  border: 2px solid #333;
 }
 .buttons a:nth-child(1) {
   background: #e1f5e7;
@@ -69,4 +66,19 @@ heading {
 .buttons a:nth-child(6) {
   background: #e9e5f3;
   color: #5f4b66;
+}
+
+#clonedElement {
+  text-decoration: none;
+  width: 70%;
+  height: 4rem;
+  font-family: "cascadia-regular";
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }/*# sourceMappingURL=index.css.map */
