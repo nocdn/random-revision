@@ -168,15 +168,15 @@ const year2curriculum = [
   "12.4: Application to mechanics",
 ];
 
-const applyEffects = function () {
-  const topic = document.querySelector(".topic");
+const applyEffects = function (elementToSelect = ".topic") {
+  const topic = document.querySelector(elementToSelect);
   topic.style.filter = "blur(20px)";
   topic.style.transform = "scale(0.1)";
   topic.style.opacity = "0.3";
 };
 
-const removeEffects = function () {
-  const topic = document.querySelector(".topic");
+const removeEffects = function (elementToSelect = ".topic") {
+  const topic = document.querySelector(elementToSelect);
   topic.style.filter = "blur(0)";
   topic.style.transform = "scale(1)";
   topic.style.opacity = "1";

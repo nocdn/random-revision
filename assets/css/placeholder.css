@@ -15,7 +15,9 @@ body {
   height: 100vh;
   height: -webkit-fill-available;
   display: grid;
-  grid-template-rows: 1fr 1fr 2fr;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 html {
@@ -77,5 +79,16 @@ html {
   color: #350064;
   text-align: center;
   transition: filter 0.5s, transform 0.5s;
-  animation: breathing 5s ease-out infinite normal;
+}
+
+.reroll {
+  border: none;
+  border-radius: 4px;
+  color: black;
+  padding: 0.5rem 1rem;
+  justify-self: center;
+  align-self: start;
+  transition: opacity 0.5s, filter 1s;
+  opacity: 0;
+  filter: blur(30px);
 }/*# sourceMappingURL=placeholder.css.map */
