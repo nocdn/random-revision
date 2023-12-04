@@ -23,3 +23,6 @@ Hence why I made this website - in the book "Atomic Habits", the author James Cl
   - [ ] Polish 🇵🇱
 - [ ] Add a re-roll feature to each page 🔄
 - [ ] Introduce a "random" button for spontaneous topic jumping 🎩
+- [ ] Add a "combine" button to pages with 2 years content 📚
+- [x] Create a placeholder page for clean code and uniform design 🎨
+- [ ] Unify design and clean up code across all pages 🎨
