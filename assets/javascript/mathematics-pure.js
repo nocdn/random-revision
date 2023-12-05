@@ -182,44 +182,67 @@ const removeEffects = function (elementToSelect = ".topic") {
   topic.style.opacity = "1";
 };
 
-const randomTopicYear2 = function () {
-  const chosenTopic =
-    year2curriculum[Math.floor(Math.random() * year2curriculum.length)];
-  const topic = document.querySelector(".topic");
-  topic.innerText = chosenTopic;
+const animateReroll = function () {
+  // Make reroll button slightly smaller on click
+  const rerollButton = document.querySelector(".reroll");
+  rerollButton.style.transform = "scale(0.9)";
+  rerollButton.style.transition = "transform 0.1s ease-in-out";
+  setTimeout(function () {
+    rerollButton.style.transform = "scale(1)";
+  }, 100);
 };
 
-const randomTopicYear1 = function () {
-  const chosenTopic =
-    year1curriculum[Math.floor(Math.random() * year1curriculum.length)];
-  const topic = document.querySelector(".topic");
-  topic.innerText = chosenTopic;
-};
-
-const assignRandomTopicMaths = function (curriculumArray) {
+const randomTopic = function (curriculumArray, elementToSelect = ".topic") {
   const chosenTopic =
     curriculumArray[Math.floor(Math.random() * curriculumArray.length)];
-  const topic = document.querySelector(".topic");
+  const topicElement = document.querySelector(elementToSelect);
+  applyEffects(elementToSelect);
 
-  applyEffects();
-  topic.innerText = chosenTopic;
-  setTimeout(removeEffects, 10);
+  setTimeout(() => {
+    topicElement.innerText = chosenTopic;
+    removeEffects(elementToSelect);
+  }, 500);
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-  const year1button = document.querySelector(".year-1");
-  year1button.addEventListener("click", function () {
-    console.log("clicked year 1");
-    applyEffects();
-    setTimeout(randomTopicYear1, 260);
-    setTimeout(removeEffects, 350);
-  });
+const randomFromBoth = function () {
+  // Combine the arrays together into one
+  const combinedArray = year1curriculum.concat(year2curriculum);
+  randomTopic(combinedArray);
+};
 
-  const year2button = document.querySelector(".year-2");
-  year2button.addEventListener("click", function () {
-    console.log("clicked year 2");
-    applyEffects();
-    setTimeout(randomTopicYear2, 260);
-    setTimeout(removeEffects, 350);
-  });
+const rerollButton = document.querySelector(".reroll");
+
+const showRerollButton = function () {
+  setTimeout(() => {
+    rerollButton.style.opacity = "1";
+    rerollButton.style.filter = "blur(0)";
+  }, 500);
+};
+
+let lastCurriculumChoice;
+let choiceSelected = false;
+
+// Adding the functions to the buttons
+
+document.querySelector(".year-1").addEventListener("click", function () {
+  randomTopic(year1curriculum);
+  lastCurriculumChoice = year1curriculum;
+  showRerollButton();
+});
+
+document.querySelector(".year-2").addEventListener("click", function () {
+  randomTopic(year2curriculum);
+  lastCurriculumChoice = year2curriculum;
+  showRerollButton();
+});
+
+document.querySelector(".combine").addEventListener("click", function () {
+  randomFromBoth();
+  lastCurriculumChoice = year1curriculum.concat(year2curriculum);
+  showRerollButton();
+});
+
+rerollButton.addEventListener("click", function () {
+  randomTopic(lastCurriculumChoice);
+  animateReroll();
 });
