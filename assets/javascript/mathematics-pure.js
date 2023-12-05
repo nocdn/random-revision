@@ -168,6 +168,17 @@ const year2curriculum = [
   "12.4: Application to mechanics",
 ];
 
+console.log(`Year 1 curriculum: ${year1curriculum.length} topics`);
+console.log(`Year 2 curriculum: ${year2curriculum.length} topics`);
+console.log(
+  `Last topic in year 1: ${year1curriculum[year1curriculum.length - 1]}`
+);
+console.log(`First element in year 2: ${year2curriculum[0]}`);
+
+const combinedArray = year1curriculum.concat(year2curriculum);
+
+console.log(`Combined curriculum: ${combinedArray.length} topics`);
+
 const applyEffects = function (elementToSelect = ".topic") {
   const topic = document.querySelector(elementToSelect);
   topic.style.filter = "blur(20px)";
@@ -192,11 +203,17 @@ const animateReroll = function () {
   }, 100);
 };
 
+let lastChosenTopic;
+let whichYearChosen;
+
 const randomTopic = function (curriculumArray, elementToSelect = ".topic") {
   const chosenTopic =
     curriculumArray[Math.floor(Math.random() * curriculumArray.length)];
   const topicElement = document.querySelector(elementToSelect);
   applyEffects(elementToSelect);
+  lastChosenTopic = chosenTopic;
+  console.log(lastChosenTopic);
+  whichYearChosenFunction(lastChosenTopic);
 
   setTimeout(() => {
     topicElement.innerText = chosenTopic;
@@ -204,10 +221,15 @@ const randomTopic = function (curriculumArray, elementToSelect = ".topic") {
   }, 500);
 };
 
-const randomFromBoth = function () {
-  // Combine the arrays together into one
-  const combinedArray = year1curriculum.concat(year2curriculum);
-  randomTopic(combinedArray);
+const whichYearChosenFunction = function (lastTopic) {
+  const year1Length = year1curriculum.length;
+  if (combinedArray.indexOf(lastTopic) >= year1Length) {
+    whichYearChosen = "year-2";
+  } else {
+    whichYearChosen = "year-1";
+  }
+  console.log(whichYearChosen);
+  return whichYearChosen;
 };
 
 const rerollButton = document.querySelector(".reroll");
@@ -219,8 +241,38 @@ const showRerollButton = function () {
   }, 500);
 };
 
-let lastCurriculumChoice;
-let choiceSelected = false;
+const applyCornerEffect = function (element) {
+  // Apply the styles defined for .year-1 to the passed element
+  element.style.position = "relative";
+
+  // Create a ::before pseudo-element
+  const beforeElement = document.createElement("div");
+  beforeElement.style.content = '""';
+  beforeElement.style.position = "absolute";
+  beforeElement.style.top = "-2px";
+  beforeElement.style.left = "-2px";
+  beforeElement.style.borderTop = "3px solid rgba(0, 0, 0, 0.6)";
+  beforeElement.style.borderLeft = "3px solid rgba(0, 0, 0, 0.6)";
+  beforeElement.style.height = "10px";
+  beforeElement.style.width = "10px";
+
+  element.appendChild(beforeElement);
+};
+
+const highlightWhichYear = function () {
+  const year1Button = document.querySelector(".year-1");
+  const year2Button = document.querySelector(".year-2");
+
+  // Remove existing corner effects, if any
+  year1Button.innerHTML = "Year 1 Topics";
+  year2Button.innerHTML = "Year 2 Topics";
+
+  if (whichYearChosen === "year-1") {
+    applyCornerEffect(year1Button);
+  } else {
+    applyCornerEffect(year2Button);
+  }
+};
 
 // Adding the functions to the buttons
 
@@ -237,9 +289,10 @@ document.querySelector(".year-2").addEventListener("click", function () {
 });
 
 document.querySelector(".combine").addEventListener("click", function () {
-  randomFromBoth();
+  randomTopic(combinedArray);
   lastCurriculumChoice = year1curriculum.concat(year2curriculum);
   showRerollButton();
+  highlightWhichYear();
 });
 
 rerollButton.addEventListener("click", function () {
