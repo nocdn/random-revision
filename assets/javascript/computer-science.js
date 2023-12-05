@@ -31,55 +31,70 @@ const curriculum = [
   "2.3.5. Path Finding Algorithms",
 ];
 
-const body = document.querySelector("body");
-
-const applyEffects = function () {
-  const topic = document.querySelector(".topic");
+const applyEffects = function (elementToSelect = ".topic") {
+  const topic = document.querySelector(elementToSelect);
   topic.style.filter = "blur(20px)";
   topic.style.transform = "scale(0.1)";
   topic.style.opacity = "0.3";
 };
 
-const removeEffects = function () {
-  const topic = document.querySelector(".topic");
+const removeEffects = function (elementToSelect = ".topic") {
+  const topic = document.querySelector(elementToSelect);
   topic.style.filter = "blur(0)";
   topic.style.transform = "scale(1)";
   topic.style.opacity = "1";
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-  const randomTopic = function (curriculumArray, isFirstLoad = True) {
-    const topic = document.querySelector(".topic");
-
-    // Apply blur and scale down before changing the text
-    applyEffects();
-
-    // if is first load assign text immediately, no timeout but still apply effects
-    if (isFirstLoad) {
-      const topic = document.querySelector(".topic");
-      topic.style.filter = "blur(20px)";
-
-      topic.innerText =
-        curriculumArray[Math.floor(Math.random() * curriculumArray.length)];
-      setTimeout(removeEffects, 10);
-    } else {
-      setTimeout(function () {
-        topic.innerText =
-          curriculumArray[Math.floor(Math.random() * curriculumArray.length)];
-      }, 300);
-      setTimeout(removeEffects, 500);
-    }
-  };
-
-  // load a random topic on page load
-  randomTopic(curriculum, true);
+const animateReroll = function () {
+  // Make reroll button slightly smaller on click
+  const rerollButton = document.querySelector(".reroll");
+  rerollButton.style.transform = "scale(0.9)";
+  rerollButton.style.transition = "transform 0.1s ease-in-out";
   setTimeout(function () {
-    const rerollButton = document.querySelector(".reroll");
+    rerollButton.style.transform = "scale(1)";
+  }, 100);
+};
+
+const randomTopic = function (curriculumArray, elementToSelect = ".topic") {
+  const chosenTopic =
+    curriculumArray[Math.floor(Math.random() * curriculumArray.length)];
+  const topicElement = document.querySelector(elementToSelect);
+  applyEffects(elementToSelect);
+
+  setTimeout(() => {
+    topicElement.innerText = chosenTopic;
+    removeEffects(elementToSelect);
+  }, 500);
+};
+
+const randomFromBoth = function () {
+  // Combine the arrays together into one
+  const combinedArray = year1curriculum.concat(year2curriculum);
+  randomTopic(combinedArray);
+};
+
+const rerollButton = document.querySelector(".reroll");
+
+const showRerollButton = function () {
+  setTimeout(() => {
     rerollButton.style.opacity = "1";
     rerollButton.style.filter = "blur(0)";
   }, 500);
+};
 
-  document.querySelector(".reroll").addEventListener("click", function () {
-    randomTopic(curriculum, false);
-  });
+let lastCurriculumChoice;
+let choiceSelected = false;
+let isFirstLoad = true;
+
+// Adding the functions to the buttons
+
+if (isFirstLoad == true) {
+  randomTopic(curriculum);
+  isFirstLoad = false;
+  showRerollButton();
+}
+
+rerollButton.addEventListener("click", function () {
+  randomTopic(curriculum);
+  animateReroll();
 });

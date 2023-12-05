@@ -66,19 +66,4 @@ heading {
 .buttons a:nth-child(6) {
   background: #e9e5f3;
   color: #5f4b66;
-}
-
-#clonedElement {
-  text-decoration: none;
-  width: 70%;
-  height: 4rem;
-  font-family: "cascadia-regular";
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid transparent;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
 }/*# sourceMappingURL=index.css.map */

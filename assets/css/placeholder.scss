@@ -8,7 +8,7 @@
 }
 
 body {
-  // height fix for safari nav bar hidding content
+  // Height fix for safari nav bar hidding content
   height: 100vh;
   height: -webkit-fill-available;
 
@@ -84,12 +84,12 @@ html {
   justify-content: center;
   font-size: 1.5rem;
   font-family: "cascadia-regular";
-  // dark purple text color
+  // Dark purple text color
   color: #350064;
-  // center the text
+  // Center the text
   text-align: center;
 
-  // for morphing animation
+  // Transition for morphing animation
   transition: filter 0.5s, transform 0.5s;
 }
 
