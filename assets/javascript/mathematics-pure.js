@@ -242,23 +242,35 @@ const showRerollButton = function () {
 };
 
 const applyCornerEffect = function (element) {
-  // Apply the styles defined for .year-1 to the passed element
   element.style.position = "relative";
 
-  // Create a ::before pseudo-element
+  // Create a ::before pseudo-element equivalent
   const beforeElement = document.createElement("div");
   beforeElement.style.content = '""';
   beforeElement.style.position = "absolute";
   beforeElement.style.top = "-2px";
   beforeElement.style.left = "-2px";
-  beforeElement.style.borderTop = "3px solid rgba(0, 0, 0, 0.6)";
-  beforeElement.style.borderLeft = "3px solid rgba(0, 0, 0, 0.6)";
+  beforeElement.style.borderTop = "3px solid rgba(200, 162, 200, 0.6)"; // Lilac color
+  beforeElement.style.borderLeft = "3px solid rgba(200, 162, 200, 0.6)"; // Lilac color
   beforeElement.style.height = "10px";
   beforeElement.style.width = "10px";
 
-  element.appendChild(beforeElement);
-};
+  // Applying initial blur and opacity
+  beforeElement.style.filter = "blur(10px)";
+  beforeElement.style.opacity = "0.3";
 
+  // Transition properties
+  beforeElement.style.transition =
+    "filter 1.5s ease-in-out, opacity 1s ease-out";
+
+  element.appendChild(beforeElement);
+
+  // Set timeout to change blur and opacity after appending the element
+  setTimeout(() => {
+    beforeElement.style.filter = "blur(0)";
+    beforeElement.style.opacity = "0.7";
+  }, 10); // Small delay to ensure transition effect is visible
+};
 const highlightWhichYear = function () {
   const year1Button = document.querySelector(".year-1");
   const year2Button = document.querySelector(".year-2");
@@ -298,4 +310,5 @@ document.querySelector(".combine").addEventListener("click", function () {
 rerollButton.addEventListener("click", function () {
   randomTopic(lastCurriculumChoice);
   animateReroll();
+  highlightWhichYear();
 });

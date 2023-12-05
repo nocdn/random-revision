@@ -28,5 +28,5 @@ Hence why I made this website - in the book "Atomic Habits", the author James Cl
 - [x] Add a "combine" button to pages with split years content 📚
 - [x] Create a placeholder page for clean code and uniform design 🎨
 - [ ] Unify design and clean up code across all pages 🎨
-- [ ] Make an indicator for which year was chosen when using combine 📚
+- [x] Make an indicator for which year was chosen when using combine 📚
 - [ ] Separate the topic number text from the topic name text and display 📝
