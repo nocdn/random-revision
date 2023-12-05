@@ -28,6 +28,16 @@ const removeEffects = function (elementToSelect = ".topic") {
   topic.style.opacity = "1";
 };
 
+const animateReroll = function () {
+  // Make reroll button slightly smaller on click
+  const rerollButton = document.querySelector(".reroll");
+  rerollButton.style.transform = "scale(0.9)";
+  rerollButton.style.transition = "transform 0.1s ease-in-out";
+  setTimeout(function () {
+    rerollButton.style.transform = "scale(1)";
+  }, 100);
+};
+
 const randomTopic = function (curriculumArray, elementToSelect = ".topic") {
   const chosenTopic =
     curriculumArray[Math.floor(Math.random() * curriculumArray.length)];
@@ -57,6 +67,7 @@ const showRerollButton = function () {
 
 let lastCurriculumChoice;
 let choiceSelected = false;
+
 // Adding the functions to the buttons
 
 document.querySelector(".year-1").addEventListener("click", function () {
@@ -79,4 +90,5 @@ document.querySelector(".combine").addEventListener("click", function () {
 
 rerollButton.addEventListener("click", function () {
   randomTopic(lastCurriculumChoice);
+  animateReroll();
 });
