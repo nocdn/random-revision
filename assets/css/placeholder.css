@@ -69,6 +69,11 @@ html {
   outline: none;
   border: 2px solid transparent;
 }
+.yearButtons button:nth-child(3) {
+  background: #fdeee2;
+  outline: none;
+  border: 2px solid transparent;
+}
 
 .topic {
   display: flex;

@@ -40,6 +40,12 @@ const randomTopic = function (curriculumArray, elementToSelect = ".topic") {
   }, 500);
 };
 
+const randomFromBoth = function () {
+  // Combine the arrays together into one
+  const combinedArray = year1curriculum.concat(year2curriculum);
+  randomTopic(combinedArray);
+};
+
 const rerollButton = document.querySelector(".reroll");
 
 const showRerollButton = function () {
@@ -62,6 +68,12 @@ document.querySelector(".year-1").addEventListener("click", function () {
 document.querySelector(".year-2").addEventListener("click", function () {
   randomTopic(year2curriculum);
   lastCurriculumChoice = year2curriculum;
+  showRerollButton();
+});
+
+document.querySelector(".combine").addEventListener("click", function () {
+  randomFromBoth();
+  lastCurriculumChoice = year1curriculum.concat(year2curriculum);
   showRerollButton();
 });
 
