@@ -31,6 +31,8 @@ const curriculum = [
   "2.3.5. Path Finding Algorithms",
 ];
 
+const body = document.querySelector("body");
+
 const applyEffects = function () {
   const topic = document.querySelector(".topic");
   topic.style.filter = "blur(20px)";
