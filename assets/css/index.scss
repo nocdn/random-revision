@@ -1,13 +1,29 @@
 @import "../fonts/fonts.scss";
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: "cascadia-regular";
+}
+
+body {
+  // Height fix for safari nav bar hidding content
+  height: 100svh;
+  height: -webkit-fill-available;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+
+  padding-bottom: 0.5rem;
+}
+
+html {
+  height: -webkit-fill-available;
 }
 
 heading {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   //   font-weight: bold;
   font-family: "cascadia-regular";
   letter-spacing: -2px;
@@ -18,7 +34,7 @@ heading {
   align-items: center;
   justify-content: center;
 
-  height: 30vh;
+  // height: 30vh;
 }
 
 .buttons {
