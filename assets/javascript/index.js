@@ -17,3 +17,20 @@ function setElementPositionByCenter(element, centerX, centerY) {
   element.style.left = `${left}px`;
   element.style.top = `${top}px`;
 }
+
+randomButton = document.querySelector(".random");
+
+randomButton.addEventListener("click", () => {
+  const subjectPages = [
+    "subjects/computer-science.html",
+    "subjects/it.html",
+    "subjects/mathematics-mechanics.html",
+    "subjects/mathematics-pure.html",
+    "subjects/mathematics-statistics.html",
+  ];
+
+  const randomIndex = Math.floor(Math.random() * subjectPages.length);
+  const randomPage = subjectPages[randomIndex];
+
+  window.location.href = randomPage;
+});

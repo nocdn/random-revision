@@ -14,7 +14,7 @@ Hence why I made this website - in the book "Atomic Habits", the author James Cl
 
 🚧 Todo:
 
-- [ ] Complete subject pages:
+- [x] Complete subject pages:
   - [x] Placeholder for unified design 🎨
   - [x] Computer Science 💻
   - [x] Information Technology 🌐
@@ -24,7 +24,7 @@ Hence why I made this website - in the book "Atomic Habits", the author James Cl
   - [x] Statistics Year 2 📈
   - [x] Polish 🇵🇱
 - [x] Add a re-roll feature to each page 🔄
-- [ ] Introduce a "random" button (on homepage) for spontaneous topic jumping 🎩
+- [x] Introduce a "random" button (on homepage) for spontaneous topic jumping 🎩
 - [x] Add a "combine" button to pages with split years content 📚
 - [x] Create a placeholder page for clean code and uniform design 🎨
 - [x] Unify design and clean up code across all pages 🎨

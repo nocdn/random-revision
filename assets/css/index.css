@@ -66,4 +66,7 @@ heading {
 .buttons a:nth-child(6) {
   background: #f2f4c3;
   color: #798b5f;
+}
+.buttons button {
+  font-size: 1.5rem;
 }/*# sourceMappingURL=index.css.map */
