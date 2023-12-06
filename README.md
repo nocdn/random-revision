@@ -17,16 +17,16 @@ Hence why I made this website - in the book "Atomic Habits", the author James Cl
 - [ ] Complete subject pages:
   - [x] Placeholder for unified design 🎨
   - [x] Computer Science 💻
-  - [ ] Information Technology 🌐
-  - [ ] Mechanics 🛠️
-  - [ ] Mechanics Year 2 🛠️🔧
-  - [ ] Statistics 📊
-  - [ ] Statistics Year 2 📈
-  - [ ] Polish 🇵🇱
+  - [x] Information Technology 🌐
+  - [x] Mechanics 🛠️
+  - [x] Mechanics Year 2 🛠️🔧
+  - [x] Statistics 📊
+  - [x] Statistics Year 2 📈
+  - [x] Polish 🇵🇱
 - [x] Add a re-roll feature to each page 🔄
-- [ ] Introduce a "random" button for spontaneous topic jumping 🎩
+- [ ] Introduce a "random" button (on homepage) for spontaneous topic jumping 🎩
 - [x] Add a "combine" button to pages with split years content 📚
 - [x] Create a placeholder page for clean code and uniform design 🎨
-- [ ] Unify design and clean up code across all pages 🎨
+- [x] Unify design and clean up code across all pages 🎨
 - [x] Make an indicator for which year was chosen when using combine 📚
 - [ ] Separate the topic number text from the topic name text and display 📝
