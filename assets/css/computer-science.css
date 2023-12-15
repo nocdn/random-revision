@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap");
 @font-face {
   font-family: "cascadia-regular";
   src: url("../fonts/cascadia.woff2") format("woff2"), url("../fonts/cascadia.woff") format("woff");
@@ -25,15 +26,18 @@ html {
 }
 
 .heading {
+  margin-top: 2rem;
   font-size: 2rem;
   letter-spacing: -2px;
-  color: #333;
-  opacity: 80%;
+  color: black;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 500;
+  letter-spacing: 0.25px;
 }
 
 .back-arrow {
@@ -83,6 +87,8 @@ html {
   font-family: "cascadia-regular";
   color: #350064;
   text-align: center;
+  align-self: center;
+  justify-self: center;
   transition: filter 0.5s, transform 0.5s;
 }
 

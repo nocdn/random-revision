@@ -1,4 +1,5 @@
 @import "../fonts/fonts.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap");
 
 * {
   box-sizing: border-box;
@@ -23,16 +24,19 @@ html {
 }
 
 .heading {
+  margin-top: 2rem;
   font-size: 2rem;
   letter-spacing: -2px;
-  color: #333;
-  opacity: 80%;
+  color: black;
   text-decoration: none;
   display: flex;
   // center everything
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 500;
+  letter-spacing: 0.25px;
 }
 
 .back-arrow {
@@ -88,6 +92,8 @@ html {
   color: #350064;
   // Center the text
   text-align: center;
+  align-self: center;
+  justify-self: center;
 
   // Transition for morphing animation
   transition: filter 0.5s, transform 0.5s;

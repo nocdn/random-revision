@@ -1,7 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap");
 @font-face {
   font-family: "cascadia-regular";
-  src: url("../fonts/cascadia.woff2") format("woff2"),
-    url("../fonts/cascadia.woff") format("woff");
+  src: url("../fonts/cascadia.woff2") format("woff2"), url("../fonts/cascadia.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -13,7 +13,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 100svh;
   height: -webkit-fill-available;
   display: grid;
   justify-content: center;
@@ -26,15 +26,18 @@ html {
 }
 
 .heading {
+  margin-top: 2rem;
   font-size: 2rem;
-  letter-spacing: -2px;
-  color: #333;
-  opacity: 80%;
+  letter-spacing: 0px;
+  color: black;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 500;
+  letter-spacing: -1px;
 }
 
 .back-arrow {
@@ -84,6 +87,8 @@ html {
   font-family: "cascadia-regular";
   color: #350064;
   text-align: center;
+  align-self: center;
+  justify-self: center;
   transition: filter 0.5s, transform 0.5s;
 }
 
@@ -100,4 +105,4 @@ html {
 }
 .reroll:active {
   background-color: #e9e5f3;
-} /*# sourceMappingURL=placeholder.css.map */
+}/*# sourceMappingURL=singleCurriculum.css.map */
