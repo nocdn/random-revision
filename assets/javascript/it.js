@@ -56,10 +56,16 @@ const randomTopic = function (curriculumArray, elementToSelect = ".topic") {
   const chosenTopic =
     curriculumArray[Math.floor(Math.random() * curriculumArray.length)];
   const topicElement = document.querySelector(elementToSelect);
+  // remove the topic from the original array
+  curriculumArray.pop(chosenTopic);
   applyEffects(elementToSelect);
 
   setTimeout(() => {
-    topicElement.innerText = chosenTopic;
+    if (curriculumArray.length === 0) {
+      topicElement.innerText = "No more topics!";
+    } else {
+      topicElement.innerText = chosenTopic;
+    }
     removeEffects(elementToSelect);
   }, 500);
 };
@@ -95,3 +101,12 @@ rerollButton.addEventListener("click", function () {
   randomTopic(curriculum);
   animateReroll();
 });
+
+const removePickedTopic = function () {
+  const topicElement = document.querySelector(".topic");
+  const topic = topicElement.innerText;
+  const topicIndex = curriculum.indexOf(topic);
+  curriculum.splice(topicIndex, 1);
+  console.log(`Removed ${topic}`);
+  console.log(curriculum);
+};

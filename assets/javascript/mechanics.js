@@ -60,9 +60,14 @@ const randomTopic = function (curriculumArray, elementToSelect = ".topic") {
   lastChosenTopic = chosenTopic;
   console.log(lastChosenTopic);
   whichYearChosenFunction(lastChosenTopic);
+  curriculumArray.pop(chosenTopic);
 
   setTimeout(() => {
-    topicElement.innerText = chosenTopic;
+    if (curriculumArray.length === 0) {
+      topicElement.innerText = "No more topics!";
+    } else {
+      topicElement.innerText = chosenTopic;
+    }
     removeEffects(elementToSelect);
   }, 500);
 };

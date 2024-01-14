@@ -43,9 +43,17 @@ const randomTopic = function (curriculumArray, elementToSelect = ".topic") {
     curriculumArray[Math.floor(Math.random() * curriculumArray.length)];
   const topicElement = document.querySelector(elementToSelect);
   applyEffects(elementToSelect);
+  lastChosenTopic = chosenTopic;
+  console.log(lastChosenTopic);
+  whichYearChosenFunction(lastChosenTopic);
+  curriculumArray.pop(chosenTopic);
 
   setTimeout(() => {
-    topicElement.innerText = chosenTopic;
+    if (curriculumArray.length === 0) {
+      topicElement.innerText = "No more topics!";
+    } else {
+      topicElement.innerText = chosenTopic;
+    }
     removeEffects(elementToSelect);
   }, 500);
 };
