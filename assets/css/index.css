@@ -80,16 +80,16 @@ heading {
   color: #bd8463;
 }
 .buttons a:nth-child(3) {
-  background: #ffeeff;
-  color: #b085b5;
+  background: #e9e5f3;
+  color: #5f4b66;
 }
 .buttons a:nth-child(4) {
   background: #dceafc;
   color: #4a596c;
 }
 .buttons a:nth-child(5) {
-  background: #e9e5f3;
-  color: #5f4b66;
+  background: #ffeeff;
+  color: #b085b5;
 }
 .buttons a:nth-child(6) {
   background: #f2f4c3;
