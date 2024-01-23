@@ -11,7 +11,6 @@ const physical = [
   "Thermodynamics",
   "Electrochemistry",
   "Rates",
-  "Mechanisms",
 ];
 
 const organic = [
@@ -28,6 +27,7 @@ const organic = [
   "Aldehydes and ketones",
   "Carboxylic acids and derivatives ",
   "NMR spectroscopy",
+  "Mechanisms",
 ];
 
 const inorganic = [
