@@ -89,11 +89,11 @@ heading {
 }
 .buttons a:nth-child(5) {
   background: #ffeeff;
-  color: #b085b5;
+  color: #8c6190;
 }
 .buttons a:nth-child(6) {
-  background: #f2f4c3;
-  color: #798b5f;
+  background: #f9e3e2;
+  color: #8c2822;
 }
 .buttons button {
   font-size: 1.5rem;
