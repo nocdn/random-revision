@@ -21,7 +21,31 @@ const year1curriculum = [
   "11.5: Constant acceleration formulae",
 ];
 
-const year2curriculum = ["No topics for year 2"];
+const year2curriculum = [
+  "4.1: Moments",
+  "4.2: Resultant moments",
+  "4.3: Equilibrium",
+  "4.4: Centres of mass",
+  "4.5: Tilting",
+  "5.1: Resolving forces",
+  "5.2: Inclined planes",
+  "5.3: Friction",
+  "6.1: Horizontal projection",
+  "6.2: Horizontal and vertical components",
+  "6.3: Projection at any angle",
+  "6.4: Projectile motion formulae",
+  "7.1: Static particles",
+  "7.2: Modelling with staticsx",
+  "7.3: Friction and static particles",
+  "7.4: Static rigid bodies",
+  "7.5: Dynamics and inclined planes",
+  "7.6: Connected particles",
+  "8.1: Vectors in kinematics",
+  "8.2: Vector methods with projectiles",
+  "8.3: Variable acceleration in one dimension",
+  "8.4: Differentiating vectors",
+  "8.5: Integrating vectors",
+];
 
 const combinedArray = year1curriculum.concat(year2curriculum);
 
