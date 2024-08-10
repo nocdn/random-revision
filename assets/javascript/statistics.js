@@ -199,7 +199,7 @@ document.querySelector(".combine").addEventListener("click", function () {
   removeSecondYear();
 });
 
-rerollButton.addEventListener("click", function () {
+rerollButton.addEventListener("mousedown", function () {
   randomTopic(lastCurriculumChoice);
   animateReroll();
   highlightWhichYear();

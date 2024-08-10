@@ -81,7 +81,7 @@ if (isFirstLoad == true) {
   showRerollButton();
 }
 
-rerollButton.addEventListener("click", function () {
+rerollButton.addEventListener("mousedown", function () {
   randomTopic(curriculum);
   animateReroll();
 });
